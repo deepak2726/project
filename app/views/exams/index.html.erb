@@ -1,0 +1,35 @@
+<h1>Listing exams</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Exam code</th>
+    <th>Instruction</th>
+    <th>Exam type</th>
+    <th>Total mark</th>
+    <th>Subject</th>
+    <th>Organisation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @exams.each do |exam| %>
+  <tr>
+    <td><%= exam.name %></td>
+    <td><%= exam.exam_code %></td>
+    <td><%= exam.instruction %></td>
+    <td><%= exam.exam_type %></td>
+    <td><%= exam.total_mark %></td>
+    <td><%= exam.subject %></td>
+    <td><%= exam.organisation_id %></td>
+    <td><%= link_to 'Show', exam %></td>
+    <td><%= link_to 'Edit', edit_exam_path(exam) %></td>
+    <td><%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Exam', new_exam_path %>

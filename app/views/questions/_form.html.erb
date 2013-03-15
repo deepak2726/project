@@ -1,0 +1,65 @@
+<%= form_for(@question) do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_type_id %><br />
+    <%= f.number_field :question_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sort_order %><br />
+    <%= f.number_field :sort_order %>
+  </div>
+  <div class="field">
+    <%= f.label :is_published %><br />
+    <%= f.check_box :is_published %>
+  </div>
+  <div class="field">
+    <%= f.label :is_shared %><br />
+    <%= f.check_box :is_shared %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subject_id %><br />
+    <%= f.number_field :subject_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br />
+    <%= f.number_field :parent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :category_subject_id %><br />
+    <%= f.number_field :category_subject_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mark %><br />
+    <%= f.number_field :mark %>
+  </div>
+  <div class="field">
+    <%= f.label :feed_back %><br />
+    <%= f.number_field :feed_back %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
